@@ -63,7 +63,7 @@ export const translations = {
     areas: {
       title: 'Service Areas',
       subtitle: 'Serving all districts of Dammam and the Eastern Province',
-      cities: ['Dammam', 'Khobar', 'Dhahran', 'Qatif', 'Aiyal', 'Al Hamra', 'Hajar', 'Al Wahah', 'Al Jamiyin'],
+      cities: ['Dammam', 'Khobar', 'Dhahran', 'Qatif', 'Ajyal', 'Al Hamra', 'Hajar', 'Al Wahah', 'Al Jamiyin'],
     },
     contact: {
       title: 'Contact Us',
@@ -138,7 +138,7 @@ export const translations = {
     areas: {
       title: 'مناطق الخدمة',
       subtitle: 'نخدم جميع أحياء الدمام والمنطقة الشرقية',
-      cities: ['الدمام', 'الخبر', 'الظهران', 'القطيف', 'العيال', 'الحمراء', 'هجر', 'الواحة', 'الجمعيين'],
+      cities: ['الدمام', 'الخبر', 'الظهران', 'القطيف', 'أجيال', 'الحمراء', 'هجر', 'الواحة', 'الجمعيين'],
     },
     contact: {
       title: 'تواصل معنا',
