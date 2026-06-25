@@ -5,10 +5,12 @@ import Services from './components/Services';
 import WhyUs from './components/WhyUs';
 import ServiceAreas from './components/ServiceAreas';
 import Footer from './components/Footer';
-import { LanguageProvider } from './context/LanguageContext';
+import { LanguageProvider, useLanguage } from './context/LanguageContext';
 import './App.css';
 
-function App() {
+function AppContent() {
+  const { lang } = useLanguage();
+
   useEffect(() => {
     const observerOptions = {
       root: null,
@@ -41,10 +43,10 @@ function App() {
       const animatedElements = document.querySelectorAll('.animate-on-scroll');
       animatedElements.forEach((el) => observer.unobserve(el));
     };
-  }, []);
+  }, [lang]);
 
   return (
-    <LanguageProvider>
+    <>
       <Navbar />
       <main>
         <Hero />
@@ -53,6 +55,14 @@ function App() {
         <ServiceAreas />
       </main>
       <Footer />
+    </>
+  );
+}
+
+function App() {
+  return (
+    <LanguageProvider>
+      <AppContent />
     </LanguageProvider>
   );
 }
