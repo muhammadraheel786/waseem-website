@@ -24,17 +24,21 @@ function App() {
       });
     }, observerOptions);
 
-    const animatedElements = document.querySelectorAll('.animate-on-scroll');
-    animatedElements.forEach((el) => {
-      observer.observe(el);
-      // Check if element is already in viewport
-      const rect = el.getBoundingClientRect();
-      if (rect.top < window.innerHeight && rect.bottom > 0) {
-        setTimeout(() => el.classList.add('is-visible'), 100);
-      }
-    });
+    // Use setTimeout to ensure DOM is fully rendered
+    setTimeout(() => {
+      const animatedElements = document.querySelectorAll('.animate-on-scroll');
+      animatedElements.forEach((el) => {
+        observer.observe(el);
+        // Check if element is already in viewport
+        const rect = el.getBoundingClientRect();
+        if (rect.top < window.innerHeight && rect.bottom > 0) {
+          setTimeout(() => el.classList.add('is-visible'), 100);
+        }
+      });
+    }, 100);
 
     return () => {
+      const animatedElements = document.querySelectorAll('.animate-on-scroll');
       animatedElements.forEach((el) => observer.unobserve(el));
     };
   }, []);
